@@ -2,23 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import { DistData } from './api/index';
 
 
 class District extends Component {
     state = {
         dist: [],
     }
-    componentDidMount() {
-        fetch(' https://api.covid19india.org/state_district_wise.json')
-            .then(res => res.json())
-            .then((data) => {
-                this.setState({ dist: data })
-
-
-            })
-            .catch(console.log)
+    async componentDidMount() {
+        const data = await DistData();
+        this.setState({ dist: data.data })
     }
-
     render() {
         const pid = this.props.id;
         const data = this.state.dist;
@@ -27,30 +21,24 @@ class District extends Component {
             distData = data[pid].districtData;
         }
         const display = distData ? Object.keys(distData).map((d, key) => {
-            console.log(distData, "data");
+
             return (
                 <li className="list-group-item d-flex justify-content-between" key={key}>
                     {d}
-                    <span>{distData[d].confirmed}</span>
+                    <span className="text-danger">{distData[d].confirmed}</span>
                 </li>
             );
         }) : null
-        return (
-
-            <div className="mt-4 position"  >
-                <div className="container">
-                <div className="row">
-                    <div className="col-12 col-lg-12">
-                        <h2 className="text-primary text-uppercase">{pid === '' ? 'India' : pid}</h2>
-                        <p className="font-weight-bold text-secondary">State Records</p>
-                    </div>
-
-                    <div className="col-12 col-lg-12 dist-height mb-4 pb-3">
-                        <ul className="list-group">
-                            {display}
-                        </ul>
-                    </div>
+        return ( 
+            <div className="position container"  >
+                <div className=" ">
+                    <h2 className="text-primary text-uppercase">{pid === '' ? 'India' : pid}</h2>
+                    <p className="font-weight-bold text-secondary">State Records</p>
                 </div>
+                <div className=" dist-height mb-4 pb-3">
+                    <ul className="list-group">
+                        {display}
+                    </ul>
                 </div>
             </div>
 

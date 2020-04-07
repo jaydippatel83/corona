@@ -14,8 +14,7 @@ class Total extends Component {
                 this.setState({ dist: data.statewise[0] })
             })
             .catch(console.log)
-    }
-
+    } 
     render() {
         const data = this.state.dist; 
         return (
