@@ -186,6 +186,7 @@ tbody tr {
     height: 20px !important;
     width: 30px !important;
     margin-top: 10px;
+    display: none;
 
   }
 }
