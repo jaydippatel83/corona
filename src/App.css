@@ -177,7 +177,8 @@ tbody tr {
 
 @media screen and (max-width: 500px) {
   .header-text {
-    font-size: 18px;
+    font-size: 12px;
+    line-height: 0px;
   }
 }
 .header-text {
@@ -188,6 +189,7 @@ tbody tr {
   height: 250px;
   overflow-y: scroll;
   width: 100%;
+  min-width: 200px !important;
 }
 
 .pointer {

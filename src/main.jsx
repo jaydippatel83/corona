@@ -6,7 +6,6 @@ import District from './district';
 import { connect } from 'react-redux';
 import { fetchData } from './api/index';
 import MapChart from './chart/chart';
-import News from './news/news';
 
 class Main extends Component {
   state = {
@@ -14,34 +13,40 @@ class Main extends Component {
     search: ''
   }
   async componentDidMount() {
-    const data = await fetchData();
+    const data = await fetchData(); 
     this.setState({ states: data.data })
   }
   searchSpace = (event) => {
     let keyword = event.target.value;
     this.setState({ search: keyword })
-  } 
+  }
+
+
   render() {
     const data = this.state.states.statewise;
     return (
-      <div>
+      <div> 
         <div className="container-fluid mt-4">
           <div className="row">
             <div className="col-lg-6">
-              <Total /> 
+              <Total />
             </div>
             <div className="col-lg-6">
-              <MapChart />
+              <MapChart/> 
             </div>
-          </div> 
-          <div className="row"> 
-            <div className="col-12 col-lg-6 table-height">
-              <div className="search-sec">
+          </div>
+          <div className="row  mt-4 mb-2">
+            <div className="col-12 col-lg-6">
+              <div className="col-12 search-sec">
                 <h2 className="text-primary">STATES</h2>
                 <div className=" " id="search-container">
                   <input type="text" placeholder="Search" onChange={(e) => this.searchSpace(e)} />
                 </div>
               </div>
+            </div> 
+          </div>
+          <div className="row">
+            <div className="col-12 col-lg-6 table-height">
               <table className="table responsive ">
                 <thead className="sticky">
                   <tr>
@@ -74,9 +79,9 @@ class Main extends Component {
                   }) : null
                 }
               </table>
-            </div>
+            </div> 
             <div className="col-12 col-lg-6">
-              <District />
+            <District />
             </div>
           </div>
         </div>

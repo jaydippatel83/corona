@@ -25,17 +25,9 @@ const FooterPage = () => {
                 </div>
 
                 <div className="container   text-md-left mt-5 ml-auto mr-auto">
-                    <div className="row mt-3 dark-grey-text">
-                        <div className="col-md-3 col-sm-6 col-12 col-lg-4 col-xl-3 mb-4">
-                            <h6 className="text-uppercase font-weight-bold">CodeCrunch</h6>
-                            <hr className="teal accent-3 mb-4 mt-0 d-inline-block mx-auto " style={{ width: '60px', backgroundColor: ' #21d192' }} />
-                            <p className="text-left">Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
-                            consectetur
-                            adipisicing elit.
-                                </p>
-                        </div>
+                    <div className="row mt-3 dark-grey-text"> 
 
-                        <div className="col-md-4 col-sm-6 col-12 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <div className="col-12 col-xl-6 mr-auto mb-md-0 mb-4">
                             <h6 className="text-uppercase font-weight-bold">Contact</h6>
                             <hr className="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: ' #21d192' }} />
                             <p>

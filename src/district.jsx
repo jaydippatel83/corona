@@ -35,8 +35,8 @@ class District extends Component {
                     <h2 className="text-primary text-uppercase">{pid === '' ? 'India' : pid}</h2>
                     <p className="font-weight-bold text-secondary">State Records</p>
                 </div>
-                <div className=" dist-height mb-4 pb-3">
-                    <ul className="list-group">
+                <div className="container dist-height mb-4 pb-3">
+                    <ul className="col-12 list-group">
                         {display}
                     </ul>
                 </div>

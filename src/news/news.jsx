@@ -25,9 +25,9 @@ class News extends Component {
                 <h2 className="text-success mt-4">RSS Feed</h2>
                 {this.state.newslist ? this.state.newslist.map((node,i) => {
                     return <ul key={i} className="list-group m-1">
-                        <li className="list-group-item text-primary  d-flex justify-content-between" >
-                            <p className="font-weight-bold col-lg-10">{node.title}</p>
-                            <a className="col-lg-2 col-3 btn btn-primary pointer" href={node.link}>Read More</a>
+                        <li className="list-group-item text-primary d-lg-flex d-md-flex  d-block justify-content-between" >
+                            <p className="font-weight-bold col-lg-10 c0l-12  col-sm-9 col-md-9">{node.title}</p>
+                            <a className="col-lg-2 col-12 col-sm-3 col-md-3  btn btn-primary pointer" href={node.link}>Read More</a>
                         </li>
                     </ul>
                 }) : null}
