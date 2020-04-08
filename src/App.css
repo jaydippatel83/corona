@@ -181,6 +181,14 @@ tbody tr {
     line-height: 0px;
   }
 }
+@media screen and (max-width: 300px) {
+   .App-logo {
+    height: 20px !important;
+    width: 30px !important;
+    margin-top: 10px;
+
+  }
+}
 .header-text {
   margin: 0px;
   line-height: 45px;
